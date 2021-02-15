@@ -24,7 +24,12 @@ export default {
   css: [
     '~/assets/main.css'
   ],
-  plugins: [
+  loading: { color: "#ac812c" },
+  router: {
+    middleware: ["theme"]
+  },
+  plugins: [ 
+    "@/plugins/mixins/core.js"
   ],
   components: true,
   buildModules: [
@@ -38,6 +43,7 @@ export default {
     '@nuxtjs/auth-next',
   ],
   axios: {
+    baseURL: "https://up.mec.biz/api/",
   },
   build: {
   },
@@ -46,6 +52,17 @@ export default {
     locales: ["ar"]
   },
   auth: {
+    strategies: {
+      'laravelJWT': {
+        provider: 'laravel/jwt',
+        url: 'https://up.mec.biz',
+        endpoints: {
+          login: { url: '/api/auth/login', method: 'post', propertyName: 'token' },
+          logout: { url: '/api/auth/logout', method: 'post' },
+          user: { url: '/api/auth/me', method: 'get', propertyName: 'user' }
+        },
+      },
+    }
   },
   sentry: {
     dsn: 'https://05797be6c9ce487f816fdbc0e01304c6@o524108.ingest.sentry.io/5636577', // Enter your project's DSN here

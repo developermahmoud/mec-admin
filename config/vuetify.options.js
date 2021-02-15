@@ -1,30 +1,37 @@
+const ar = require("vuetify/es5/locale/ar").default;
+
 export default {
   rtl: true,
+  lang: {
+    locales: { ar },
+    current: "ar"
+  },
   theme: {
     options: {
-      customProperties: true,
+      customProperties: true
     },
+    dark: true,
     themes: {
-      dark: {
-        primary: '#3b9cd6',
-        secondary: '#424242',
-        accent: '#1E1E1E',
-        error: '#FF5252',
-        info: '#E3F2FD',
-        success: '#4CAF50',
-        warning: '#FFC107',
-        background: '#18191a',
-      },
       light: {
-        primary: '#3b9cd6',
-        secondary: '#E0E0E0',
-        accent: '#8c9eff',
-        error: '#b71c1c',
-        info: '#E3F2FD',
-        success: '#4CAF50',
-        warning: '#FFC107',
-        background: '#E0E0E0',
+        primary: "#ac812c",
+        secondary: "#ffffff",
+        accent: "#82B1FF",
+        error: "#FF5252",
+        info: "#2196F3",
+        success: "#4CAF50",
+        warning: "#FFC107",
+        background: "#f2f5f8"
       },
-    },
-  },
-}
+      dark: {
+        primary: "#ac812c",
+        secondary: "#192734",
+        accent: "#82B1FF",
+        error: "#FF5252",
+        info: "#2196F3",
+        success: "#4CAF50",
+        warning: "#FFC107",
+        background: "#15202b"
+      }
+    }
+  }
+};

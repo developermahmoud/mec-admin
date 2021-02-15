@@ -1,21 +1,20 @@
 <template>
   <v-app :dark="$vuetify.theme.dark">
-    <partials-navbar />
     <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
+      {{ $vuetify.theme.dark }}
+      <nuxt />
     </v-main>
-    <partials-footer />
+    <core-loading />
+    <core-snackbar />
   </v-app>
 </template>
 
 <script>
-export default {
-}
+export default {};
 </script>
 <style>
 .v-application {
   background-color: var(--v-background-base) !important;
 }
 </style>
+
